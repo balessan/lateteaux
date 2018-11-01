@@ -7,41 +7,41 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 // Register Custom Post Type
-class TravelDestination {
+class TravelStep {
 	private static $instance;
 
 	public static function getInstance() {
 		if( null == self::$instance ) {
-			self::$instance = new TravelDestination();
+			self::$instance = new TravelStep();
 		}
 		return self::$instance;
 	}
 
 	private function __construct() {
-		  add_action( 'init', array( $this, 'add_travel_destination_post_type' ) );
+		  add_action( 'init', array( $this, 'add_travel_step_post_type' ) );
 
     	include_once( plugin_dir_path( __FILE__ ) . '/../../advanced-custom-fields-pro/acf.php' );
     	add_action( 'init', array( $this, 'add_acf_fields') );
 	}
 
     // Register Custom Post Type
-    public function add_travel_destination_post_type() {
+    public function add_travel_step_post_type() {
     	$labels = array(
-    		'name'                  => _x( 'Destination', 'Post Type General Name', 'ltav' ),
-    		'singular_name'         => _x( 'Destination', 'Post Type Singular Name', 'ltav' ),
-    		'menu_name'             => __( 'Destinations', 'ltav' ),
-    		'name_admin_bar'        => __( 'Destination', 'ltav' ),
+    		'name'                  => _x( 'Étape', 'Post Type General Name', 'ltav' ),
+    		'singular_name'         => _x( 'Étape', 'Post Type Singular Name', 'ltav' ),
+    		'menu_name'             => __( 'Étapes', 'ltav' ),
+    		'name_admin_bar'        => __( 'Étape', 'ltav' ),
     		'archives'              => __( 'Item Archives', 'ltav' ),
     		'attributes'            => __( 'Item Attributes', 'ltav' ),
     		'parent_item_colon'     => __( 'Parent Item:', 'ltav' ),
-    		'all_items'             => __( 'Toutes les destinations', 'ltav' ),
-    		'add_new_item'          => __( 'Ajouter une destination', 'ltav' ),
+    		'all_items'             => __( 'Toutes les étapes', 'ltav' ),
+    		'add_new_item'          => __( 'Ajouter une étape', 'ltav' ),
     		'add_new'               => __( 'Ajouter', 'ltav' ),
     		'new_item'              => __( 'Nouveau', 'ltav' ),
     		'edit_item'             => __( 'Éditer', 'ltav' ),
     		'update_item'           => __( 'Mettre à jour', 'ltav' ),
     		'view_item'             => __( 'Afficher', 'ltav' ),
-    		'view_items'            => __( 'Afficher la destination', 'ltav' ),
+    		'view_items'            => __( 'Afficher l\'étape', 'ltav' ),
     		'search_items'          => __( 'Rechercher', 'ltav' ),
     		'not_found'             => __( 'Not found', 'ltav' ),
     		'not_found_in_trash'    => __( 'Not found in Trash', 'ltav' ),
@@ -51,14 +51,14 @@ class TravelDestination {
     		'use_featured_image'    => __( 'Use as featured image', 'ltav' ),
     		'insert_into_item'      => __( 'Insert into item', 'ltav' ),
     		'uploaded_to_this_item' => __( 'Uploaded to this item', 'ltav' ),
-    		'items_list'            => __( 'Liste des destinations', 'ltav' ),
+    		'items_list'            => __( 'Liste des étapes', 'ltav' ),
     		'items_list_navigation' => __( 'Items list navigation', 'ltav' ),
     		'filter_items_list'     => __( 'Filter items list', 'ltav' ),
     	);
 
     	$args = array(
-    		'label'                 => __( 'Destinations', 'ltav' ),
-        'description'           => __( 'Gestion des destinations', 'ltav' ),
+    		'label'                 => __( 'Étapes', 'ltav' ),
+        'description'           => __( 'Gestion des étapes', 'ltav' ),
     		'labels'                => $labels,
     		'supports'              => array( 'title', 'thumbnail', 'editor' ),
     		'taxonomies'            => array( 'ltav_country' ),
@@ -76,19 +76,19 @@ class TravelDestination {
     		'publicly_queryable'    => true,
     		'capability_type'       => 'post',
   			'rewrite' 				=> array(
-  				'slug' => 'destinations',
+  				'slug' => 'etapes',
   				'with_front' => false,
   			),
     	);
 
-    	register_post_type( 'ltav_destination', $args );
+    	register_post_type( 'ltav_step', $args );
     }
 
     public static function add_acf_fields() {
         if( function_exists('acf_add_local_field_group') ):
             acf_add_local_field_group(array (
                 'key' => 'group_5a1ae0083d47d',
-                'title' => 'Travel Destination Fields',
+                'title' => 'Travel Step Fields',
                 'fields' => array (
                     array (
                         'key' => 'field_5a1ae01c4cff3',
@@ -116,7 +116,7 @@ class TravelDestination {
                         array (
                             'param' => 'post_type',
                             'operator' => '==',
-                            'value' => 'ltav_destination',
+                            'value' => 'ltav_step',
                         ),
                     ),
                 ),

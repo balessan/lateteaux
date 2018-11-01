@@ -56,6 +56,6 @@ class Country {
 			'show_tagcloud'              => true,
 		);
 
-		register_taxonomy( 'ltav_country', array( 'ltav_destination' ), $args );
+		register_taxonomy( 'ltav_country', array( 'ltav_step' ), $args );
 	}
 }

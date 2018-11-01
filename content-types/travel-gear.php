@@ -29,7 +29,7 @@ class TravelGear {
     	$labels = array(
     		'name'                  => _x( 'Matériel', 'Post Type General Name', 'ltav' ),
     		'singular_name'         => _x( 'Matériel', 'Post Type Singular Name', 'ltav' ),
-    		'menu_name'             => __( 'Matériels', 'ltav' ),
+    		'menu_name'             => __( 'Matériel', 'ltav' ),
     		'name_admin_bar'        => __( 'Matériel', 'ltav' ),
     		'archives'              => __( 'Item Archives', 'ltav' ),
     		'attributes'            => __( 'Item Attributes', 'ltav' ),
