@@ -87,7 +87,7 @@ class TravelDestination {
     public static function add_acf_fields() {
         if( function_exists('acf_add_local_field_group') ):
             acf_add_local_field_group(array (
-                'key' => 'group_5a1ae0083d46d',
+                'key' => 'group_5a1ae0083d47d',
                 'title' => 'Travel Destination Fields',
                 'fields' => array (
                     array (

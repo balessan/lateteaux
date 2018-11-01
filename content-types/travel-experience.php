@@ -91,7 +91,7 @@ class TravelExperience {
                 'title' => 'Travel Experience Fields',
                 'fields' => array (
                     array (
-                        'key' => 'field_5a1ae01c4cff3',
+                        'key' => 'field_5a1ae01c4cff5',
                         'label' => 'Description',
                         'name' => 'description',
                         'type' => 'textarea',
