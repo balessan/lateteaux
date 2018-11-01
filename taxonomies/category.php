@@ -56,6 +56,6 @@ class Category {
 			'show_tagcloud'              => true,
 		);
 
-		register_taxonomy( 'ltav_category', array( 'ltav_travel_gear' ), $args );
+		register_taxonomy( 'ltav_category', array( 'ltav_gear' ), $args );
 	}
 }

@@ -81,7 +81,7 @@ class TravelDestination {
   			),
     	);
 
-    	register_post_type( 'ltav_travel_destination', $args );
+    	register_post_type( 'ltav_destination', $args );
     }
 
     public static function add_acf_fields() {
@@ -116,7 +116,7 @@ class TravelDestination {
                         array (
                             'param' => 'post_type',
                             'operator' => '==',
-                            'value' => 'ltav_travel_gear',
+                            'value' => 'ltav_gear',
                         ),
                     ),
                 ),

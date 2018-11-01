@@ -81,7 +81,7 @@ class TravelGear {
   			),
     	);
 
-    	register_post_type( 'ltav_travel_gear', $args );
+    	register_post_type( 'ltav_gear', $args );
     }
 
     public static function add_acf_fields() {
@@ -116,7 +116,7 @@ class TravelGear {
                         array (
                             'param' => 'post_type',
                             'operator' => '==',
-                            'value' => 'ltav_travel_gear',
+                            'value' => 'ltav_gear',
                         ),
                     ),
                 ),
