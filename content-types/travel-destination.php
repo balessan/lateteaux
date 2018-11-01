@@ -60,7 +60,7 @@ class TravelDestination {
     		'label'                 => __( 'Destinations', 'ltav' ),
         'description'           => __( 'Gestion des destinations', 'ltav' ),
     		'labels'                => $labels,
-    		'supports'              => array( 'title', 'thumbnail' ),
+    		'supports'              => array( 'title', 'thumbnail', 'editor' ),
     		'taxonomies'            => array( 'ltav_country' ),
     		'hierarchical'          => false,
     		'public'                => true,
@@ -116,7 +116,7 @@ class TravelDestination {
                         array (
                             'param' => 'post_type',
                             'operator' => '==',
-                            'value' => 'ltav_gear',
+                            'value' => 'ltav_destination',
                         ),
                     ),
                 ),
