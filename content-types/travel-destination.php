@@ -67,7 +67,7 @@ class TravelDestination {
     		'show_ui'               => true,
     		'show_in_menu'          => true,
     		'menu_position'         => 5,
-        'menu_icon'             => 'dashicons-format-image',
+        'menu_icon'             => 'dashicons-location-alt',
     		'show_in_admin_bar'     => true,
     		'show_in_nav_menus'     => true,
     		'can_export'            => true,
@@ -88,7 +88,7 @@ class TravelDestination {
         if( function_exists('acf_add_local_field_group') ):
             acf_add_local_field_group(array (
                 'key' => 'group_5a1ae0083d46d',
-                'title' => 'Basket Fields',
+                'title' => 'Travel Destination Fields',
                 'fields' => array (
                     array (
                         'key' => 'field_5a1ae01c4cff3',

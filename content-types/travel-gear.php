@@ -67,7 +67,7 @@ class TravelGear {
     		'show_ui'               => true,
     		'show_in_menu'          => true,
     		'menu_position'         => 5,
-        'menu_icon'             => 'dashicons-format-image',
+        'menu_icon'             => 'dashicons-hammer',
     		'show_in_admin_bar'     => true,
     		'show_in_nav_menus'     => true,
     		'can_export'            => true,
@@ -88,10 +88,10 @@ class TravelGear {
         if( function_exists('acf_add_local_field_group') ):
             acf_add_local_field_group(array (
                 'key' => 'group_5a1ae0083d46d',
-                'title' => 'Basket Fields',
+                'title' => 'Travel Gear Fields',
                 'fields' => array (
                     array (
-                        'key' => 'field_5a1ae01c4cff3',
+                        'key' => 'field_5a1ae01c4cff4',
                         'label' => 'Description',
                         'name' => 'description',
                         'type' => 'textarea',
