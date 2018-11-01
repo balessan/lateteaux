@@ -1,20 +1,20 @@
 <?php
 /*
-Plugin Name: Camille-Alessandroni
-Description: Plugin to properly setup the database with custom taxonomies and custom post types for my sister purpose
-Text Domain: camille-aless
+Plugin Name: LTAV
+Description: Plugin to properly setup the database with custom taxonomies and custom post types for our travel
+Text Domain: ltav
 Domain Path: /languages/
 Version: 1.0
 Author: Benoit Alessandroni
 */
-namespace CamilleAless;
+namespace LTAV;
 
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-require_once('ca-utils.php');
+require_once('ltav-utils.php');
 require_once('content-types/setup.php');
 require_once('taxonomies/setup.php');
 require_once('admin/setup.php');
@@ -22,7 +22,7 @@ require_once('admin/setup.php');
 /**
 * Main class of the plugin, in charge of setuping everything
 */
-class CamilleAless {
+class LTAV {
 
 	/**
 	* Static instance of the class
@@ -33,11 +33,11 @@ class CamilleAless {
 	/**
 	* get_instance - Method used to instanciate the class as a Singleton
 	*
-	* @return {CamilleAless}  The current instance if it exists, or the new one
+	* @return {LTAV}  The current instance if it exists, or the new one
 	*/
 	public static function get_instance() {
 		if( null == self::$instance ) {
-			self::$instance = new CamilleAless();
+			self::$instance = new LTAV();
 		} // end if
 		return self::$instance;
 	}
@@ -49,7 +49,7 @@ class CamilleAless {
 		Taxonomies\Setup::bootstrap();
 		Admin\Setup::bootstrap();
 
-        register_activation_hook( __FILE__ , array( '\CamilleAless\Admin\FrontPage', 'install_frontpage' ) );
+    register_activation_hook( __FILE__ , array( '\LTAV\Admin\FrontPage', 'install_frontpage' ) );
 	}
 
 	/**
@@ -59,10 +59,10 @@ class CamilleAless {
 	*/
 	public function load_plugin_textdomain() {
 		$path = basename( dirname( __FILE__ ) ) . '/languages/';
-		load_plugin_textdomain('camille-aless', FALSE, $path);
+		load_plugin_textdomain('ltav', FALSE, $path);
 	}
 }
 
-$CamilleAless = CamilleAless::get_instance();
+$LTAV = LTAV::get_instance();
 
 ?>

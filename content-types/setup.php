@@ -1,5 +1,5 @@
 <?php
-namespace CamilleAless\ContentTypes;
+namespace LTAV\ContentTypes;
 
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) {
@@ -8,7 +8,7 @@ if ( !defined( 'ABSPATH' ) ) {
 
 /**
  * Setup class in charge of everything related to the custom post type we are using on
- * CamilleAless
+ * LTAV
  */
 class Setup {
 
@@ -18,7 +18,7 @@ class Setup {
    * @return {type}  description
    */
   public static function bootstrap() {
-    \CamilleAless\Utils::recursivelyIncludeDirectoryFiles( __DIR__, 'CamilleAless\ContentTypes' );
+    \LTAV\Utils::recursivelyIncludeDirectoryFiles( __DIR__, 'LTAV\ContentTypes' );
   }
 }
 

@@ -7,38 +7,38 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 // Register Custom Post Type
-class Category {
+class Country {
 	private static $instance;
 
 	public static function getInstance() {
 		if( null == self::$instance ) {
-			self::$instance = new Category();
+			self::$instance = new Country();
 		} // end if
 		return self::$instance;
 	}
 
 	private function __construct() {
-		add_action( 'init', array($this, 'add_category_taxonomy') );
+		add_action( 'init', array($this, 'add_country_taxonomy') );
 	}
 
 	// Register Custom Taxonomy
-	function add_category_taxonomy() {
+	function add_country_taxonomy() {
 		$labels = array(
-			'name'                       => _x( 'Catégories', 'Taxonomy General Name', 'ltav' ),
-			'singular_name'              => _x( 'Catégorie', 'Taxonomy Singular Name', 'ltav' ),
-			'menu_name'                  => __( 'Catégorie', 'ltav' ),
-			'all_items'                  => __( 'Toutes les catégories', 'ltav' ),
+      'name'                       => _x( 'Pays', 'Taxonomy General Name', 'ltav' ),
+			'singular_name'              => _x( 'Pays', 'Taxonomy Singular Name', 'ltav' ),
+			'menu_name'                  => __( 'Pays', 'ltav' ),
+			'all_items'                  => __( 'Tous les pays', 'ltav' ),
 			'parent_item'                => __( 'Parent Item', 'ltav' ),
 			'parent_item_colon'          => __( 'Parent Item:', 'ltav' ),
-			'new_item_name'              => __( 'Nouvelle catégorie', 'ltav' ),
+			'new_item_name'              => __( 'Nouveau pays', 'ltav' ),
 			'add_new_item'               => __( 'Ajouter', 'ltav' ),
 			'edit_item'                  => __( 'Éditer', 'ltav' ),
 			'update_item'                => __( 'Mettre à jour', 'ltav' ),
 			'view_item'                  => __( 'Afficher', 'ltav' ),
-			'separate_items_with_commas' => __( 'Séparer les catégories avec des virgules', 'ltav' ),
-			'add_or_remove_items'        => __( 'Ajouter ou supprimer une catégorie', 'ltav' ),
-			'choose_from_most_used'      => __( 'Choisir parmi les plus utilisées', 'ltav' ),
-			'popular_items'              => __( 'Catégories populaires', 'ltav' ),
+			'separate_items_with_commas' => __( 'Séparer les pays avec des virgules', 'ltav' ),
+			'add_or_remove_items'        => __( 'Ajouter ou supprimer un pays', 'ltav' ),
+			'choose_from_most_used'      => __( 'Choisir parmi les plus utilisés', 'ltav' ),
+			'popular_items'              => __( 'Pays populaires', 'ltav' ),
 			'search_items'               => __( 'Rechercher', 'ltav' ),
 			'not_found'                  => __( 'Not Found', 'ltav' ),
 			'no_terms'                   => __( 'No items', 'ltav' ),
@@ -56,6 +56,6 @@ class Category {
 			'show_tagcloud'              => true,
 		);
 
-		register_taxonomy( 'ltav_category', array( 'ltav_travel_gear' ), $args );
+		register_taxonomy( 'ltav_country', array( 'ltav_travel_destination' ), $args );
 	}
 }

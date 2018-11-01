@@ -1,5 +1,5 @@
 <?php
-namespace CamilleAless;
+namespace LTAV;
 
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) {

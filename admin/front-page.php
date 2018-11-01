@@ -1,5 +1,5 @@
 <?php
-namespace CamilleAless\Admin;
+namespace LTAV\Admin;
 
 // Exit if accessed Adminy
 if ( !defined( 'ABSPATH' ) ) {
@@ -14,7 +14,7 @@ class FrontPage {
 
     public static function getInstance() {
         if( null == self::$instance ) {
-            self::$instance = new \CamilleAless\Admin\FrontPage();
+            self::$instance = new \LTAV\Admin\FrontPage();
         } // end if
         return self::$instance;
     }
@@ -22,12 +22,12 @@ class FrontPage {
     private function __construct() {
         include_once( plugin_dir_path( __FILE__ ) . '/../../advanced-custom-fields-pro/acf.php' );
 
-        add_action( 'init', array( $this, 'add_acf_fields' ) );
+        // add_action( 'init', array( $this, 'add_acf_fields' ) );
     }
 
     //Add Events page on activation:
 	public static function install_frontpage() {
-		self::$id = \CamilleAless\Utils::install_new_page( 'accueil' );
+		self::$id = \LTAV\Utils::install_new_page( 'accueil' );
 
         $front_page_settings = get_option('show_on_front');
         if ( $front_page_settings == 'posts' ) {
