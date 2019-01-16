@@ -24,9 +24,9 @@ class ExperienceCategory {
 	// Register Custom Taxonomy
 	function add_experience_category_taxonomy() {
 		$labels = array(
-			'name'                       => _x( 'Catégories', 'Taxonomy General Name', 'ltav' ),
-			'singular_name'              => _x( 'Catégorie', 'Taxonomy Singular Name', 'ltav' ),
-			'menu_name'                  => __( 'Catégorie', 'ltav' ),
+			'name'                       => _x( 'Catégories d\'expérience', 'Taxonomy General Name', 'ltav' ),
+			'singular_name'              => _x( 'Catégorie d\'expérience', 'Taxonomy Singular Name', 'ltav' ),
+			'menu_name'                  => __( 'Catégorie d\'expérience', 'ltav' ),
 			'all_items'                  => __( 'Toutes les catégories', 'ltav' ),
 			'parent_item'                => __( 'Parent Item', 'ltav' ),
 			'parent_item_colon'          => __( 'Parent Item:', 'ltav' ),

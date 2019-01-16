@@ -60,7 +60,7 @@ class TravelGear {
     		'label'                 => __( 'Matériel', 'ltav' ),
     		'description'           => __( 'Gestion du matériel', 'ltav' ),
     		'labels'                => $labels,
-    		'supports'              => array( 'title', 'thumbnail', 'editor' ),
+    		'supports'              => array( 'title', 'thumbnail', 'editor', 'comments', 'revisions' ),
     		'taxonomies'            => array( 'ltav_category' ),
     		'hierarchical'          => false,
     		'public'                => true,

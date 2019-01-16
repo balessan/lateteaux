@@ -22,8 +22,17 @@ class FrontPage {
     private function __construct() {
         include_once( plugin_dir_path( __FILE__ ) . '/../../advanced-custom-fields-pro/acf.php' );
 
-        // add_action( 'init', array( $this, 'add_acf_fields' ) );
+        // Showing multiple post types in Posts Widget
+        add_action('elementor_pro/posts/query/front_page_query_filter', array( $this, 'front_page_posts_query') );
     }
+
+
+
+  public function front_page_posts_query( $query ) {
+    // Here we set the query to fetch posts with
+    // post type of 'custom-post-type1' and 'custom-post-type2'
+    $query->set( 'post_type', [ 'ltav_gear', 'post', 'ltav_experience', 'ltav_step' ] );
+  }
 
     //Add Events page on activation:
 	public static function install_frontpage() {
@@ -35,37 +44,4 @@ class FrontPage {
             update_option( 'page_on_front', self::$id );
         }
 	}
-
-    public function add_acf_fields() {
-        self::$id = get_page_by_path( 'accueil' )->ID;
-
-        if ( function_exists('acf_add_local_field_group') ):
-            acf_add_local_field_group(array (
-                'key' => 'group_5a09d47c269df',
-                'title' => 'Front Page fields',
-                'fields' => array (
-                ),
-                'location' => array (
-                    array (
-                        array (
-                            'param' => 'page',
-                            'operator' => '==',
-                            'value' => self::$id,
-                        ),
-                    ),
-                ),
-                'menu_order' => 0,
-                'position' => 'normal',
-                'style' => 'seamless',
-                'label_placement' => 'top',
-                'instruction_placement' => 'label',
-				        'hide_on_screen' => array (
-                    0 => 'the_content',
-                ),
-                'active' => 1,
-                'description' => '',
-            ));
-
-        endif;
-    }
 }

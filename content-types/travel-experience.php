@@ -60,7 +60,7 @@ class TravelExperience {
     		'label'                 => __( 'Expériences', 'ltav' ),
         'description'           => __( 'Gestion des expériences', 'ltav' ),
     		'labels'                => $labels,
-    		'supports'              => array( 'title', 'thumbnail', 'editor' ),
+    		'supports'              => array( 'title', 'thumbnail', 'editor', 'comments', 'revisions'),
     		'taxonomies'            => array( 'ltav_country', 'ltav_exp_category' ),
     		'hierarchical'          => false,
     		'public'                => true,

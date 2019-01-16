@@ -60,7 +60,7 @@ class TravelStep {
     		'label'                 => __( 'Étapes', 'ltav' ),
         'description'           => __( 'Gestion des étapes', 'ltav' ),
     		'labels'                => $labels,
-    		'supports'              => array( 'title', 'thumbnail', 'editor' ),
+    		'supports'              => array( 'title', 'thumbnail', 'editor', 'comments', 'revisions' ),
     		'taxonomies'            => array( 'ltav_country' ),
     		'hierarchical'          => false,
     		'public'                => true,
